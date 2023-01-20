@@ -22,7 +22,7 @@ npx pod-install
 
 See the example app [here](https://github.com/BenHurMartins/react-native-signing-field/blob/main/example/src/App.tsx).
 
-```
+```ts
 import * as React from 'react';
 //...
 import {
@@ -52,6 +52,8 @@ export default function App() {
   );
 }
 ```
+
+![Gravação de Tela 2023-01-20 às 16 42 32 2023-01-20 17_00_58](https://user-images.githubusercontent.com/22153156/213794825-887ada8c-efc8-4e07-ba65-cbed605844d1.gif)
 
 ## Contributing
 
