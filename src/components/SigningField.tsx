@@ -1,7 +1,5 @@
 import React, { FC, ReactNode, useEffect, useState } from 'react';
 import { StyleSheet, TouchableOpacity, View, ViewStyle } from 'react-native';
-import { Gesture, GestureDetector } from 'react-native-gesture-handler';
-import { runOnJS } from 'react-native-reanimated';
 import { Path, Svg } from 'react-native-svg';
 
 type PathType = {
@@ -58,38 +56,35 @@ const SigningField: FC<Props> = ({
     });
   };
 
-  const gesture = Gesture.Pan()
-    .onBegin(({ x, y }) => {
-      runOnJS(setNewPath)(x, y);
-    })
-    .onUpdate(({ x, y }) => {
-      runOnJS(updatePath)(x, y);
-    });
-
   return (
-    <GestureDetector gesture={gesture}>
-      <View style={[styles.canvas, propsStyle]}>
-        <TouchableOpacity
-          style={styles.resetButton}
-          onPress={() => setPaths([])}
-        >
-          {resetFieldButton ? resetFieldButton : <ResetFieldIcon />}
-        </TouchableOpacity>
-        <Svg>
-          {paths.map(({ path }, i) => {
-            return (
-              <Path
-                key={i}
-                d={`${path.join(' ')}`}
-                fill="none"
-                strokeWidth={`${strokeWidth}px`}
-                stroke={strokeColor}
-              />
-            );
-          })}
-        </Svg>
-      </View>
-    </GestureDetector>
+    <View
+      style={[styles.canvas, propsStyle]}
+      onStartShouldSetResponder={() => true}
+      onMoveShouldSetResponder={() => true}
+      onResponderStart={(e) => {
+        setNewPath(e?.nativeEvent?.locationX, e?.nativeEvent?.locationY);
+      }}
+      onResponderMove={(e) => {
+        updatePath(e?.nativeEvent?.locationX, e?.nativeEvent?.locationY);
+      }}
+    >
+      <TouchableOpacity style={styles.resetButton} onPress={() => setPaths([])}>
+        {resetFieldButton ? resetFieldButton : <ResetFieldIcon />}
+      </TouchableOpacity>
+      <Svg>
+        {paths.map(({ path }, i) => {
+          return (
+            <Path
+              key={i}
+              d={`${path.join(' ')}`}
+              fill="none"
+              strokeWidth={`${strokeWidth}px`}
+              stroke={strokeColor}
+            />
+          );
+        })}
+      </Svg>
+    </View>
   );
 };
 

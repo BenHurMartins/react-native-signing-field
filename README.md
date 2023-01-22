@@ -4,9 +4,13 @@ This library implements a signing field and a display signing feature for react 
 
 ## Installation
 
-This Library relies on [react-native-reanimated](https://docs.swmansion.com/react-native-reanimated/docs/fundamentals/installation)
+### React-Native-SVG
 
-Before installing it, follow react-native-reanimated instructions of setup, then:
+This Library needs [react-native-svg](https://github.com/software-mansion/react-native-svg) installed and configured.
+
+Using Expo projects you don't need to install it first otherwise check the steps to install react-native-svg in the library docs first.
+
+### Installing
 
 ```sh
 yarn add react-native-signing-field
@@ -32,7 +36,7 @@ import {
 } from 'react-native-signing-field';
 
 export default function App() {
-  const [signing, setSigning] = React.useState<SigningPathType>[];
+  const [signing, setSigning] = React.useState<SigningPathType>([]);
 
   return (
     <View style={styles.container}>
