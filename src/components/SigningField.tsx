@@ -98,7 +98,6 @@ const styles = StyleSheet.create({
     width: 300,
     height: 100,
     borderWidth: 1,
-    margin: 30,
   },
   resetButton: {
     position: 'absolute',

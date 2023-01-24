@@ -55,27 +55,30 @@ export default function App() {
     </View>
   );
 }
-```                                                          
+```
 
 ![Gravação de Tela 2023-01-20 às 16 42 32 2023-01-20 17_00_58](https://user-images.githubusercontent.com/22153156/213794825-887ada8c-efc8-4e07-ba65-cbed605844d1.gif)
 
 ## Props
+
 ### SigningField
-| Prop                                |    Type    | Description                                                                                                                                           |
-| :---------------------------------- | :--------: | :------------------------------------------------------------------------------------- |
-| setSigning | `function`  | Function that gets `SigningPathType` as argument, ideally to set the SigningPath on a HOC                                                                        |
-| style                           | `object`  | Style of the wrapping view, default is `width: 300` , `height: 100`, `borderWidth: 1`                                                        |
-| strokeColor                           | `string`  | Color of the stroke, it can be any RGB color, default is `black`                                                             |
-| strokeWidth                           | `number`  | Width of the stroke, default is 2                                                             |
-| resetFieldButton                           | `React Node`  | Component that will replace the reset button, it can be any other component or string.  
+
+| Prop             |     Type     | Description                                                                               |
+| :--------------- | :----------: | :---------------------------------------------------------------------------------------- |
+| setSigning       |  `function`  | Function that gets `SigningPathType` as argument, ideally to set the SigningPath on a HOC |
+| style            |   `object`   | Style of the wrapping view, default is `width: 300` , `height: 100`, `borderWidth: 1`     |
+| strokeColor      |   `string`   | Color of the stroke, it can be any RGB color, default is `black`                          |
+| strokeWidth      |   `number`   | Width of the stroke, default is 2                                                         |
+| resetFieldButton | `React Node` | Component that will replace the reset button, it can be any other component or string.    |
 
 ### SigningDisplay
-| Prop                                |    Type    | Description                                                                                                                                           |
-| :---------------------------------- | :--------: | :------------------------------------------------------------------------------------- |
-| signing | `SigningPathType`  | Value of the path to be displayed in the SigningDisplay component.                             |
-| style                           | `object`  | Style of the wrapping view, default is `width: 300` , `height: 200`                                                    |
-| strokeColor                           | `string`  | Color of the stroke, it can be any RGB color, default is `black`                                                             |
-| strokeWidth                           | `number`  | Width of the stroke, default is 2                                                             |
+
+| Prop        |       Type        | Description                                                         |
+| :---------- | :---------------: | :------------------------------------------------------------------ |
+| signing     | `SigningPathType` | Value of the path to be displayed in the SigningDisplay component.  |
+| style       |     `object`      | Style of the wrapping view, default is `width: 300` , `height: 200` |
+| strokeColor |     `string`      | Color of the stroke, it can be any RGB color, default is `black`    |
+| strokeWidth |     `number`      | Width of the stroke, default is 2                                   |
 
 ## Contributing
 
