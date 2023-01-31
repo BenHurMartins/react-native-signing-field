@@ -1,0 +1,21 @@
+name: 🆙 publish to npm
+on:
+  release:
+    types: [created]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: ✅ checkout
+        uses: actions/checkout@v2
+      - name: 💚 node
+        uses: actions/setup-node@v1
+        with:
+          node-version: 14
+          registry-url: 'https://registry.npmjs.org'
+      - name: 🔧 install and build
+        run: npm install && npm run build
+      - name: 📦 publish package on NPM
+        run: npm publish
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}

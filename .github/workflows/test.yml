@@ -1,0 +1,25 @@
+name: '🔍 test'
+on:
+  push:
+    branches:
+      - main
+    paths-ignore:
+      - 'package.json'
+      - 'CHANGELOG.md'
+      - '/example'
+jobs:
+  publish:
+    name: 🔍 test
+    runs-on: ubuntu-latest
+    steps:
+      - name: ✅ checkout
+        uses: actions/checkout@v2
+      - name: 💚 node
+        uses: actions/setup-node@v1
+        with:
+          node-version: 14
+          registry-url: 'https://registry.npmjs.org'
+      - name: ⚙️ install
+        run: npm ci
+      - name: 🔍 test
+        run: npm test
