@@ -11,8 +11,12 @@ jobs:
       - name: 💚 node
         uses: actions/setup-node@v1
         with:
-          node-version: 14
+          node-version: 16
           registry-url: 'https://registry.npmjs.org'
+      - name: Install bob
+        uses: benchkram/bob-install-action@v1
+        with:
+          version: 0.7.0
       - name: 📦 publish package on NPM
         run: npm publish
         env:
