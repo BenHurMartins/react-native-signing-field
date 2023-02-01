@@ -6,17 +6,15 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: ✅ checkout
-        uses: actions/checkout@v2
-      - name: 💚 node
-        uses: actions/setup-node@v1
-        with:
-          node-version: 16
-          registry-url: 'https://registry.npmjs.org'
-      - name: Install bob
-        uses: benchkram/bob-install-action@v1
-        with:
-          version: 0.7.0
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Setup
+        uses: ./.github/actions/setup
+
+      - name: Build package
+        run: yarn prepack
+
       - name: 📦 publish package on NPM
         run: npm publish
         env:
