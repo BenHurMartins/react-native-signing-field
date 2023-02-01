@@ -20,6 +20,6 @@ jobs:
           node-version: 14
           registry-url: 'https://registry.npmjs.org'
       - name: ⚙️ install
-        run: npm ci
+        run: yarn install --frozen-lockfile
       - name: 🔍 test
-        run: npm test
+        run: yarn test

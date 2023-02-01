@@ -48,9 +48,6 @@
     "url": "https://github.com/BenHurMartins/react-native-signing-field/issues"
   },
   "homepage": "https://github.com/BenHurMartins/react-native-signing-field#readme",
-  "publishConfig": {
-    "registry": "https://registry.npmjs.org/"
-  },
   "devDependencies": {
     "@commitlint/config-conventional": "^17.0.2",
     "@evilmartians/lefthook": "^1.2.2",
